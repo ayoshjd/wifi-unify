@@ -1,0 +1,38 @@
+# ---- 凭据与设备信息（禁止提交）----
+硬件设备信息.txt
+硬件设备信息.txt.bak
+*.bak
+*.bak.*
+*密码*
+*口令*
+*credential*
+credential*
+*.secret*
+password*
+passwd*
+*token*
+*secret*
+
+# ---- 设备配置导出 / 快照（含密钥与内网拓扑）----
+*.bin
+snapshots/
+backup/
+*.cfg
+*.dat
+
+# ---- 脚本默认产物（可能含 BSSID、内网地址、主机名）----
+outputs/
+work/
+
+# ---- 本机/临时产物 ----
+.env
+.env.*
+*.key
+*.pem
+*.pfx
+*.local.*
+*.log
+tmp/
+temp/
+.DS_Store
+Thumbs.db

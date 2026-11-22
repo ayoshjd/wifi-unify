@@ -1,0 +1,33 @@
+{
+  "_note": "Test-PhaseGate.ps1 的闸门规格示例。路径相对 ProjectRoot；stopNotice.file 省略时自动取最新 after 快照的 00-快照说明.md。approval 必须由人填写，脚本不代签。",
+  "_note2": "acceptance.unreviewedMarkers 命中的判据行若不含 reviewedMarker，判 FAIL；criteriaFile 省略时与 acceptance.file 相同。leftovers.previousPhaseFile 用于核对上一阶段遗留是否被本阶段承接，省略则不检查。",
+  "phase": "P1-AP-A",
+  "previousPhase": "P0",
+  "snapshot": {
+    "root": "backup/snapshots",
+    "tag": "S1-AP-A",
+    "requirePair": true,
+    "requireDiff": true,
+    "minFiles": 3
+  },
+  "acceptance": {
+    "file": "outputs/acceptance-P1.md",
+    "requireSections": ["判据", "观察项", "不作判据"],
+    "unreviewedMarkers": ["待复核", "B 级", "B级", "C 级", "C级", "推测", "未复测", "未验证"],
+    "reviewedMarker": "已复核"
+  },
+  "leftovers": {
+    "file": "outputs/leftovers.json",
+    "allowedStatus": ["closed", "accepted", "open", "deferred"],
+    "mirrorFiles": ["outputs/plan.md"],
+    "previousPhaseFile": "outputs/leftovers-P0.json"
+  },
+  "stopNotice": {
+    "mustContain": ["停点"]
+  },
+  "approval": {
+    "required": true,
+    "by": "<approver>",
+    "at": "2026-01-01T12:00:00"
+  }
+}

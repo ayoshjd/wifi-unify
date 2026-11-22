@@ -1,0 +1,21 @@
+{
+  "_note": "遗留项清单示例。open 必须有 owner；ID 必须唯一；若闸门配置了 mirrorFiles，每个 ID 都必须能在那些文档中检索到。",
+  "items": [
+    {
+      "id": "LINK-10M-01",
+      "summary": "上联链路仅协商 10 Mbps，待换线复核",
+      "status": "accepted",
+      "owner": "<住户/执行者>",
+      "next": "有备用网线时复测",
+      "basis": "现场两端 LinkSpeed 均为 10 Mbps；吞吐已排除出判据"
+    },
+    {
+      "id": "AP-C-COVERAGE-01",
+      "summary": "远端房间 RSSI 约 -72 dBm，可用但非优",
+      "status": "open",
+      "owner": "<执行者>",
+      "next": "观察期内复测；必要时挪位",
+      "basis": "固定点位 3 次读数"
+    }
+  ]
+}

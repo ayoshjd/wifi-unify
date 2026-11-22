@@ -1,0 +1,71 @@
+{
+  "_note": "示例模板：字段级变更规格。before/target 必须是实机回读值；secret=true 的字段只允许写『长度=N / 类别=… / 一致=…』。layer 只能填 L1/L2/L3/DNS/代理 之一。所有值均为占位，不得照抄。",
+  "tag": "S1-AP-A",
+  "device": "<设备名/位置>",
+  "managementUrl": "http://192.0.2.10",
+  "operator": "",
+  "layer": "L2",
+  "phase": "before",
+  "fields": [
+    {
+      "page": "<网络参数/LAN 设置>",
+      "field": "LAN IP",
+      "before": "待回读",
+      "target": "192.0.2.10",
+      "secret": false,
+      "evidence": "A",
+      "source": "页面回读",
+      "note": "改后管理地址会变；登录路径与回滚路径已推演"
+    },
+    {
+      "page": "<DHCP 服务器/DHCP 服务>",
+      "field": "DHCP 服务",
+      "before": "待回读",
+      "target": "关闭",
+      "secret": false,
+      "evidence": "A",
+      "source": "页面回读",
+      "note": "关闭前确认上联未接主网"
+    },
+    {
+      "page": "<无线设置/基本设置>",
+      "field": "SSID",
+      "before": "待回读",
+      "target": "<SSID>",
+      "secret": false,
+      "evidence": "A",
+      "source": "页面回读",
+      "note": "逐频段各有一份，分别保存、分别回读"
+    },
+    {
+      "page": "<无线设置/安全>",
+      "field": "加密方式",
+      "before": "待回读",
+      "target": "<与基准一致>",
+      "secret": false,
+      "evidence": "A",
+      "source": "页面回读",
+      "note": ""
+    },
+    {
+      "page": "<无线设置/基本设置>",
+      "field": "信道",
+      "before": "待回读",
+      "target": "<规划值>",
+      "secret": false,
+      "evidence": "A",
+      "source": "页面回读 + 扫描",
+      "note": "固定前先关自动信道优化"
+    },
+    {
+      "page": "<无线设置/安全>",
+      "field": "无线密码",
+      "before": "长度=待填 / 类别=待填",
+      "target": "长度=待填 / 类别=待填 / 与基准一致=待确认",
+      "secret": true,
+      "evidence": "A",
+      "source": "人工两次录入",
+      "note": "禁止写明文；一致性由两次独立录入确认"
+    }
+  ]
+}

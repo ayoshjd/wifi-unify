@@ -1,0 +1,6 @@
+{
+  "_note": "Test-NetConfigConsistency.ps1 的期望文件示例。所有地址均为文档保留段（RFC 5737）占位，必须替换为现场回读值。",
+  "Gateway": "192.0.2.1",
+  "Ssids": ["<SSID>"],
+  "ForbiddenSubnets": ["198.51.100.0/24"]
+}
